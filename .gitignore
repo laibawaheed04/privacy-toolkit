@@ -8,16 +8,20 @@ env/
 __pycache__/
 *.py[cod]
 *$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
 
-# Environment variables and secrets
+# Environment variables and secrets — never commit these
 .env
 .env.*
-
-# Keep an example environment file if needed
 !.env.example
+secrets/
+*.key
 
 # Test and coverage files
 .pytest_cache/

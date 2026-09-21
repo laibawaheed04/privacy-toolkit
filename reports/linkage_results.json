@@ -1,0 +1,27 @@
+{
+  "coverage": 0.4,
+  "voter_path": "data/voter_list.csv",
+  "pseudonymized": {
+    "dataset": "pseudonymized",
+    "join_keys": [
+      "age",
+      "zip_code",
+      "gender"
+    ],
+    "voter_records": 2000,
+    "unique_links": 524,
+    "reidentified_rate": 26.2
+  },
+  "anonymized": {
+    "dataset": "anonymized",
+    "join_keys": [
+      "age_band",
+      "zip3",
+      "gender"
+    ],
+    "voter_records": 2000,
+    "unique_links": 0,
+    "reidentified_rate": 0.0
+  },
+  "reduction_factor": 524.0
+}

@@ -1,0 +1,17 @@
+{
+  "quasi_identifiers": [
+    "age",
+    "zip_code",
+    "gender"
+  ],
+  "n_records": 5000,
+  "n_equivalence_classes": 2498,
+  "n_unique_classes": 1333,
+  "n_unique_records": 1333,
+  "pct_unique": 26.66,
+  "min_k": 1,
+  "median_class_size": 1.0,
+  "pct_below_k5": 77.98,
+  "prosecutor_risk": 1.0,
+  "achieved_l": 1
+}

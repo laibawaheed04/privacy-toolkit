@@ -1,0 +1,42 @@
+{
+  "salary_mape_pct": 0.319,
+  "condition_total_variation": 0.001,
+  "n_raw": 5000,
+  "n_anon": 4935,
+  "salary_by_age_band_raw": {
+    "18-29": 71723.21,
+    "30-39": 79232.87,
+    "40-49": 80523.34,
+    "50-59": 84464.16,
+    "60-69": 86258.67,
+    "70+": 94750.7
+  },
+  "salary_by_age_band_anon": {
+    "18-29": 71609.81,
+    "30-39": 79237.63,
+    "40-49": 80390.09,
+    "50-59": 84649.34,
+    "60-69": 86621.91,
+    "70+": 95644.66
+  },
+  "condition_share_raw": {
+    "Arthritis": 0.0688,
+    "Asthma": 0.0914,
+    "Cancer": 0.053,
+    "Depression": 0.1044,
+    "Diabetes": 0.083,
+    "Heart Disease": 0.0654,
+    "Hypertension": 0.1154,
+    "No Condition": 0.4186
+  },
+  "condition_share_anon": {
+    "Arthritis": 0.0683,
+    "Asthma": 0.0914,
+    "Cancer": 0.0531,
+    "Depression": 0.1044,
+    "Diabetes": 0.0827,
+    "Heart Disease": 0.0655,
+    "Hypertension": 0.1153,
+    "No Condition": 0.4195
+  }
+}

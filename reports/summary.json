@@ -1,0 +1,214 @@
+{
+  "generated_at": "2026-09-21 23:23 UTC",
+  "baseline": {
+    "quasi_identifiers": [
+      "age",
+      "zip_code",
+      "gender"
+    ],
+    "n_records": 5000,
+    "n_equivalence_classes": 2498,
+    "n_unique_classes": 1333,
+    "n_unique_records": 1333,
+    "pct_unique": 26.66,
+    "min_k": 1,
+    "median_class_size": 1.0,
+    "pct_below_k5": 77.98,
+    "prosecutor_risk": 1.0,
+    "achieved_l": 1
+  },
+  "dictionary": {
+    "roster_coverage": 0.6,
+    "roster_names": 3000,
+    "records_with_known_name": 3094,
+    "domains_guessed": [
+      "gmail.com",
+      "yahoo.com",
+      "hotmail.com",
+      "outlook.com",
+      "aol.com"
+    ],
+    "guesses_tried": 1470000,
+    "unsalted_sha256": {
+      "cracked": 3094,
+      "of": 5000,
+      "pct": 61.88,
+      "seconds": 21.14
+    },
+    "keyed_hmac": {
+      "cracked": 0,
+      "of": 5000,
+      "pct": 0.0,
+      "seconds": 9.74,
+      "guesses_tried": 1470000
+    },
+    "pct_unique_after_pseudonymization": 26.66
+  },
+  "anonymization": {
+    "k": 5,
+    "l": 2,
+    "n_in": 5000,
+    "n_after_generalization": 5000,
+    "n_after_k": 4935,
+    "n_out": 4935,
+    "suppressed": 65,
+    "suppression_rate": 1.3,
+    "achieved_k": 5,
+    "achieved_l": 3,
+    "risk_after": {
+      "quasi_identifiers": [
+        "age_band",
+        "zip3",
+        "gender"
+      ],
+      "n_records": 4935,
+      "n_equivalence_classes": 77,
+      "n_unique_classes": 0,
+      "n_unique_records": 0,
+      "pct_unique": 0.0,
+      "min_k": 5,
+      "median_class_size": 58.0,
+      "pct_below_k5": 0.0,
+      "prosecutor_risk": 0.2,
+      "achieved_l": 3
+    },
+    "risk_after_generalization_only": {
+      "quasi_identifiers": [
+        "age_band",
+        "zip3",
+        "gender"
+      ],
+      "n_records": 5000,
+      "n_equivalence_classes": 103,
+      "n_unique_classes": 7,
+      "n_unique_records": 7,
+      "pct_unique": 0.14,
+      "min_k": 1,
+      "median_class_size": 38.0,
+      "pct_below_k5": 1.3,
+      "prosecutor_risk": 1.0,
+      "achieved_l": 1
+    }
+  },
+  "linkage": {
+    "coverage": 0.4,
+    "voter_path": "data/voter_list.csv",
+    "pseudonymized": {
+      "dataset": "pseudonymized",
+      "join_keys": [
+        "age",
+        "zip_code",
+        "gender"
+      ],
+      "voter_records": 2000,
+      "unique_links": 524,
+      "reidentified_rate": 26.2
+    },
+    "anonymized": {
+      "dataset": "anonymized",
+      "join_keys": [
+        "age_band",
+        "zip3",
+        "gender"
+      ],
+      "voter_records": 2000,
+      "unique_links": 0,
+      "reidentified_rate": 0.0
+    },
+    "reduction_factor": 524.0
+  },
+  "utility_k5": {
+    "salary_mape_pct": 0.319,
+    "condition_total_variation": 0.001,
+    "n_raw": 5000,
+    "n_anon": 4935,
+    "salary_by_age_band_raw": {
+      "18-29": 71723.21,
+      "30-39": 79232.87,
+      "40-49": 80523.34,
+      "50-59": 84464.16,
+      "60-69": 86258.67,
+      "70+": 94750.7
+    },
+    "salary_by_age_band_anon": {
+      "18-29": 71609.81,
+      "30-39": 79237.63,
+      "40-49": 80390.09,
+      "50-59": 84649.34,
+      "60-69": 86621.91,
+      "70+": 95644.66
+    },
+    "condition_share_raw": {
+      "Arthritis": 0.0688,
+      "Asthma": 0.0914,
+      "Cancer": 0.053,
+      "Depression": 0.1044,
+      "Diabetes": 0.083,
+      "Heart Disease": 0.0654,
+      "Hypertension": 0.1154,
+      "No Condition": 0.4186
+    },
+    "condition_share_anon": {
+      "Arthritis": 0.0683,
+      "Asthma": 0.0914,
+      "Cancer": 0.0531,
+      "Depression": 0.1044,
+      "Diabetes": 0.0827,
+      "Heart Disease": 0.0655,
+      "Hypertension": 0.1153,
+      "No Condition": 0.4195
+    }
+  },
+  "utility_curve": [
+    {
+      "k": 2,
+      "l": 2,
+      "n_out": 4987,
+      "suppression_rate": 0.26,
+      "achieved_k": 2,
+      "achieved_l": 2,
+      "salary_mape_pct": 0.217,
+      "condition_total_variation": 0.0006
+    },
+    {
+      "k": 3,
+      "l": 2,
+      "n_out": 4981,
+      "suppression_rate": 0.38,
+      "achieved_k": 3,
+      "achieved_l": 2,
+      "salary_mape_pct": 0.207,
+      "condition_total_variation": 0.0009
+    },
+    {
+      "k": 5,
+      "l": 2,
+      "n_out": 4935,
+      "suppression_rate": 1.3,
+      "achieved_k": 5,
+      "achieved_l": 3,
+      "salary_mape_pct": 0.319,
+      "condition_total_variation": 0.001
+    },
+    {
+      "k": 10,
+      "l": 2,
+      "n_out": 4867,
+      "suppression_rate": 2.66,
+      "achieved_k": 10,
+      "achieved_l": 4,
+      "salary_mape_pct": 0.235,
+      "condition_total_variation": 0.0043
+    },
+    {
+      "k": 15,
+      "l": 2,
+      "n_out": 4798,
+      "suppression_rate": 4.04,
+      "achieved_k": 15,
+      "achieved_l": 5,
+      "salary_mape_pct": 3.099,
+      "condition_total_variation": 0.0065
+    }
+  ]
+}

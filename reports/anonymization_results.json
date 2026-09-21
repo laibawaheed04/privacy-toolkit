@@ -1,0 +1,46 @@
+{
+  "k": 5,
+  "l": 2,
+  "n_in": 5000,
+  "n_after_generalization": 5000,
+  "n_after_k": 4935,
+  "n_out": 4935,
+  "suppressed": 65,
+  "suppression_rate": 1.3,
+  "achieved_k": 5,
+  "achieved_l": 3,
+  "risk_after": {
+    "quasi_identifiers": [
+      "age_band",
+      "zip3",
+      "gender"
+    ],
+    "n_records": 4935,
+    "n_equivalence_classes": 77,
+    "n_unique_classes": 0,
+    "n_unique_records": 0,
+    "pct_unique": 0.0,
+    "min_k": 5,
+    "median_class_size": 58.0,
+    "pct_below_k5": 0.0,
+    "prosecutor_risk": 0.2,
+    "achieved_l": 3
+  },
+  "risk_after_generalization_only": {
+    "quasi_identifiers": [
+      "age_band",
+      "zip3",
+      "gender"
+    ],
+    "n_records": 5000,
+    "n_equivalence_classes": 103,
+    "n_unique_classes": 7,
+    "n_unique_records": 7,
+    "pct_unique": 0.14,
+    "min_k": 1,
+    "median_class_size": 38.0,
+    "pct_below_k5": 1.3,
+    "prosecutor_risk": 1.0,
+    "achieved_l": 1
+  }
+}

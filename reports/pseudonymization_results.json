@@ -1,0 +1,27 @@
+{
+  "roster_coverage": 0.6,
+  "roster_names": 3000,
+  "records_with_known_name": 3094,
+  "domains_guessed": [
+    "gmail.com",
+    "yahoo.com",
+    "hotmail.com",
+    "outlook.com",
+    "aol.com"
+  ],
+  "guesses_tried": 1470000,
+  "unsalted_sha256": {
+    "cracked": 3094,
+    "of": 5000,
+    "pct": 61.88,
+    "seconds": 21.14
+  },
+  "keyed_hmac": {
+    "cracked": 0,
+    "of": 5000,
+    "pct": 0.0,
+    "seconds": 9.74,
+    "guesses_tried": 1470000
+  },
+  "pct_unique_after_pseudonymization": 26.66
+}
