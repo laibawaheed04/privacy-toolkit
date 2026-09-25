@@ -1,6 +1,6 @@
 # Privacy Toolkit
 
-Pseudonymize synthetic personal data, anonymize it and then attack both releases to check whether the protection actually holds.
+**Pseudonymization, Anonymization and Re-identification Risk**
 
 All records are synthetic, generated with Faker using a fixed seed (42). No real personal data is used anywhere in this repository.
 
