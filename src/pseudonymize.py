@@ -14,6 +14,7 @@ The secret key is read from the PSEUDO_KEY environment variable. If it is not
 set, a random key is generated once and stored in secrets/pseudo.key
 (git-ignored). Never commit the key or the vault.
 """
+
 from __future__ import annotations
 
 import hashlib

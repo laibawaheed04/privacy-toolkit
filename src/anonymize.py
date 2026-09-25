@@ -1,7 +1,7 @@
 """k-anonymity + l-diversity via generalization and suppression.
 
 Generalization
-  age      -> 10-year bands (18-29, 30-39, ...)
+  age      -> 10-year bands (18-29, 30-39, ....)
   zip_code -> first 3 digits (region)
 
 Suppression

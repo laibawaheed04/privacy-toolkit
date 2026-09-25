@@ -2,7 +2,7 @@
 
 Threat model: the attacker has (1) the published dataset and (2) a public
 name roster covering part of the population (think voter list or company
-directory), and (3) knows the common email format `first.last<NN>@provider`.
+directory) and (3) knows the common email format `first.last<NN>@provider`.
 The attacker does not have the secret key.
 
 Run from the repo root:  python src/dictionary_attack.py
