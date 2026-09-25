@@ -1,65 +1,55 @@
 # Findings
 
-Generated 2026-09-21 23:23 UTC. Synthetic n = 5000.
+Generated 2026-09-21 23:23 UTC. Synthetic n = 5,000.
 
-## Analyze: starting risk
+## Starting risk
 
-On (age, ZIP, gender):
+On age, ZIP, and gender alone:
 
 - **26.66%** of records are unique (k = 1).
 - **77.98%** sit in a class smaller than k = 5.
-- Worst-case prosecutor risk is **1.0** (1 / min class size).
+- Worst-case prosecutor risk is **1.0** (1 / minimum class size).
 
-Hashing names away does not change this. Quasi-identifiers are the real join keys.
+Hashing names away does not change any of this. Quasi-identifiers, not direct identifiers, are the real join keys.
 
-## Analyze: unsalted hashing fails
+## Unsalted hashing fails
 
-A dictionary of `first.lastNN@provider` emails, using a roster that covers
-60% of names:
+A dictionary of `first.lastNN@provider` email guesses, run against a roster covering 60% of names:
 
 - Unsalted SHA-256 cracked **61.88%** of emails.
 - HMAC-SHA256 with a secret key cracked **0.0%**.
 
-HMAC stops the rainbow-table attack. It does **not** stop linkage: after
-pseudonymization, **26.66%** of people are
-still unique on age + ZIP + gender.
+HMAC stops the dictionary attack, but it does not stop linkage. After pseudonymization, **26.66%** of people are still unique on age, ZIP, and gender — identical to the raw baseline.
 
-## Construct: anonymization (k = 5, l = 2)
+## Anonymization (k = 5, l = 2)
 
-Generalize age to bands and ZIP to 3 digits, then suppress small or
-non-diverse classes.
+Age generalized to 10-year bands, ZIP truncated to 3 digits, then classes suppressed below k or below l distinct medical conditions:
 
-- Records kept: **4935 / 5000** (suppressed 1.3%).
+- Records kept: **4,935 / 5,000** (1.3% suppressed).
 - Achieved **k = 5**, **l = 3**.
 
-## Execute: linkage attack
+## Linkage attack
 
-Join a fake public voter list (names + quasi-identifiers) to each release:
+A fake public voter list (names plus quasi-identifiers) joined against each release:
 
-- Pseudonymized: **524** unique links
-  (26.2% of the voter list).
-- Anonymized: **0** unique links
-  (0.0% of the voter list).
+- Pseudonymized: **524** unique links (26.2% of the voter list).
+- Anonymized: **0** unique links (0.0% of the voter list).
 
-Two "anonymous" files can still identify someone when quasi-identifiers line up.
-k-anonymity is what breaks uniqueness on those keys.
+Two datasets that each look anonymous on their own can still identify someone once their quasi-identifiers line up. k-anonymity is what actually removes that uniqueness, not the removal of names.
 
-## Execute: utility
+## Utility
 
-Same analyses on raw vs k = 5 anonymized data:
+Same analyses run on the raw and the k = 5 anonymized data:
 
 - Mean salary by age band, MAPE: **0.319%**
-- Medical-condition shares, total variation: **0.001**
+- Medical condition shares, total variation: **0.001**
 
-See `utility_vs_k.png` for how that cost grows with k.
+See `utility_vs_k.png` for how this cost grows as k increases.
 
 ## Recommendations
 
-1. Do not treat hashing or tokenization as anonymization. Tokens are still personal data.
-2. Store the HMAC key and the vault off the analytics path; rotate the key if leaked.
-3. Before a public or research release, enforce k-anonymity (and l-diversity on
-   sensitive fields) on the actual quasi-identifiers an attacker would have.
-4. Report suppression rate and utility loss next to k. Picking k = 5 without
-   measuring either is theatre.
-5. This demo is synthetic. Real releases need a documented QI list, a threat
-   model, and a human review of residual unique cases.
+1. Do not treat hashing or tokenization as anonymization — a token is still personal data as long as it can be traced back to an identity.
+2. Keep the HMAC key and the vault off the analytics path, and rotate the key if either is ever exposed.
+3. Before any public or research release, enforce k-anonymity — and l-diversity on sensitive fields — using the quasi-identifiers an attacker could realistically obtain, not an assumed or convenient list.
+4. Report suppression rate and utility loss alongside k. Choosing k = 5 without measuring either is a decision made on faith, not evidence.
+5. This demo uses synthetic data. A real release needs a documented quasi-identifier list, an explicit threat model, and manual review of any residual unique cases.
